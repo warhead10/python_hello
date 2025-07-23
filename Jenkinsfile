@@ -12,16 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Install Python') {
-            steps {
-                sh '''
-                apt-get update
-                apt-get install -y python3
-                '''
-            }
-        }
-
-
         stage('Build') {
             steps {
                 echo 'Building the application...'

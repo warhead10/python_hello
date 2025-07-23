@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker-agent
-    }
+    agent any
     triggers{
         githubpush()
     }
@@ -28,7 +26,7 @@ pipeline {
         always {
             echo 'Pipeline Project webhook python'
             
-        }t 
+        }
     }
 }
 

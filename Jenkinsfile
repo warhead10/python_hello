@@ -36,7 +36,6 @@ pipeline {
             }
         }
     }
-
     post {
         always {
             echo 'Pipeline Project webhook python'

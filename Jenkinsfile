@@ -1,6 +1,8 @@
 pipeline {
-    agent docker-agent
-    trigger {
+    agent {
+        docker-agent
+    }
+    triggers{
         githubpush()
     }
     stages {

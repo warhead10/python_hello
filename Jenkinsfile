@@ -1,8 +1,10 @@
 pipeline {
     agent any
-    triggers{
-        githubpush
+
+    triggers {
+        githubPush()
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -10,23 +12,25 @@ pipeline {
                 checkout scm
             }
         }
+
         stage('Build') {
             steps {
                 echo 'Building the application...'
                 sh 'python3 test.py'
             }
         }
+
         stage('Test') {
-        steps {
+            steps {
                 echo 'Running unit tests...'
+                
             }
         }
     }
+
     post {
         always {
             echo 'Pipeline Project webhook python'
-            
         }
     }
 }
-
